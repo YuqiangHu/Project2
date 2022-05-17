@@ -9,8 +9,10 @@
     </head>
     <body>
     navigation bar:
-        <div>homepage: <a href="{{url_for('index')}}">Home</a></div>
-        <div>login: <a href="/login">Login</a></div>
+        <div>Homepage: <a href="{{url_for('index')}}">Home</a></div>
+        <div>Login: <a href="/login">Login</a></div>
+        <div>Play game!: <a href="/game">Play</a></div>
+        <div>How to Play <a href="/rule">rules</a></div>
         <hr>
         {% with messages = get_flashed_messages() %}
         {% if messages %}
