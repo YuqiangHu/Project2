@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+    <head>
+      {% if title %}
+      <title>{{ title }} - Roger</title>
+      {% else %}
+      <title>Welcome to rogerpage</title>
+      {% endif %}
+    </head>
+    <body>
+    navigation bar:
+        <div>homepage: <a href="{{url_for('index')}}">Home</a></div>
+        <div>login: <a href="/login">Login</a></div>
+        <hr>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+    </body>
+</html>
