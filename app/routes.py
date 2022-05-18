@@ -4,13 +4,13 @@ from app.forms import LoginForm
 from flask_login import current_user, login_user
 from app.models import User
 from flask_login import logout_user
-
+from flask_login import login_required
 
 @app.route('/')
 @app.route('/index')
 def index():
-    user = {'username': 'roger'}
-    return render_template('index.html', title='Home', user=user)
+    
+    return render_template('index.html', title='Home')
 
 @app.route('/game')
 def game():
@@ -23,6 +23,7 @@ def rule():
 	return render_template('rule.html', title='rule', user=user)
 	
 @app.route('/post')
+@login_required
 def index2():
     user = {'username': 'Roger'}
     posts = [

@@ -20,6 +20,15 @@
         <div>Play game!: <a href="/game">Play</a></div>
         <div>message <a href="/post">message</a></div>
         <div>How to Play <a href="/rule">rules</a></div>
+        
+        <div>
+         {% if current_user.is_anonymous %}
+         <h1>please login</h1>
+         {% else %}
+         <h1>Hi!{{ current_user.username }}!</h1>
+         {% endif %}
+        </div>
+        
         <hr>
         {% with messages = get_flashed_messages() %}
         {% if messages %}
