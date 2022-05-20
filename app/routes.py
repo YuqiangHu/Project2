@@ -8,6 +8,8 @@ from flask_login import login_required
 from app import db
 from app.forms import RegistrationForm
 
+from flask_admin.contrib.sqla import ModelView
+
 @app.route('/')
 @app.route('/index')
 def index():
@@ -76,3 +78,7 @@ def register():
         flash('Congratulations, you are now a registered user!')
         return redirect(url_for('login'))
     return render_template('register.html', title='Register', form=form)
+
+
+
+
