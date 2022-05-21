@@ -1,13 +1,45 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Hi, {{ user.username }}!</h1>
    
-    <div><p>this is <b>rules!</b></p></div>
-    <div>Guess the WORDLE in six tries.
+    <h1>this is rules!</h1>
+    <div>Give it a try!
 
-Each guess must be a valid five-letter word. Hit the enter button to submit.
+<p>The rules of Sudoku are simple, as the name suggests -- each number can only appear once. Sudoku is a nine - house, and each house is divided into nine small cells. Use logic and reasoning to fill in the remaining blanks with numbers from 1 to 9. Make each number 1-9 appear only once in each row, column, and house. The numbers in each line are 1-9 and are not repeated. Note: Every eligible sudoku puzzle has one and only one answer, and the reasoning method is based on this. Any problem with no or multiple solutions is not eligible</p>
 
-After each guess, the color of the tiles will change to show how close your guess was to the word.</div>
+    </div>
+    
+    <div class="img">
+    <h1>User Manual</h1>
+	   <h3 align = "center" >How to start </h3>
+	   <p>First please select the game difficulty mode, you can choose Easy mode, Middle mode, and Hard mode. When you choose the mode, the game will automatically generate.</p>
+	   <img class="featurette-image img-responsive center-block" 
+		src="{{url_for('static',filename = 'image/start.PNG')}}" 
+		height="250px" width="250px" alt="Generic placeholder image" align = "center">
+    </div>
+
+    <div class="img">
+	   <h3 align = "center" >How to Play </h3>
+	   <p>Notice that there is only one blank cell in the 3x3 cell in the upper right, and only 2 is missing in this 3x3 cell, so it must be 2 here.</p>
+	   <img class="featurette-image img-responsive center-block" 
+		src="{{url_for('static',filename = 'image/grid.PNG')}}" 
+		height="250px" width="250px" alt="Generic placeholder image" align = "center">
+    </div>
+    
+    <div class="img">
+	   <h3 align = "center" >How to Play in line </h3>
+	   <p>Note that only 2 is missing in the rightmost column, so that blank box must be filled with 2</p>
+	   <img class="featurette-image img-responsive center-block" 
+		src="{{url_for('static',filename = 'image/grid.PNG')}}" 
+		height="250px" width="250px" alt="Generic placeholder image" align = "center">
+    </div>
+    
+    <div class="img">
+	   <h3 align = "center" >Win</h3>
+	   <p>When you have filled all the blank boxes, you can click the check button to check if your answer is correct. When your answer is correct, you earn your time/marks</p>
+	   <img class="featurette-image img-responsive center-block" 
+		src="{{url_for('static',filename = 'image/win.PNG')}}" 
+		height="250px" width="250px" alt="Generic placeholder image" align = "center">
+    </div>
 {% endblock %}
 

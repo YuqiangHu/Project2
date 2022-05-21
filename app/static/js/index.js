@@ -11,7 +11,7 @@ $(function () {
     var l7 = $(".l7>span>input")
     var l8 = $(".l8>span>input")
 
-    var checkArr = []; // 完整的数组
+    var checkArr = []; // the whole array
     var score = 0;
     var record = Number(localStorage.getItem('record'));
     if(record){
@@ -78,7 +78,7 @@ $(function () {
         let chance;
         switch (level) {
             case 'easy':
-                chance = 1;
+                chance = 0.7;
                 break;
             case 'middle':
                 chance = 0.5;
@@ -98,8 +98,8 @@ $(function () {
         reset();
         let arr = generateAll();
 
-        let order1 = disorder(); // 横向
-        let order2 = disorder(); // 纵向
+        let order1 = disorder(); // crosswise
+        let order2 = disorder(); // lengthways
 
         for (let r = 0; r < 9; r++) {
             for (let c = 0; c < 9; c++) {
@@ -164,7 +164,7 @@ $(function () {
     $(':input').on('keyup',function(e){
         let key = e.which;
         let dom = $(this);
-        if(key == 38){ // 上
+        if(key == 38){ // up
             let index = $('.l input').index(this)
             let upper = index - 9
             if(upper<0){
@@ -172,7 +172,7 @@ $(function () {
             }
             dom = number2dom(upper)
         }
-        if(key == 40){ // 下
+        if(key == 40){ // down
             let index = $('.l input').index(this)
             let lower = index + 9
             if(lower<0){
@@ -180,10 +180,10 @@ $(function () {
             }
             dom = number2dom(lower)
         }
-        if(key == 37){ // 左
+        if(key == 37){ // left
             dom = $(this).parent().prev().children()
         }
-        if(key == 39){ // 右
+        if(key == 39){ // right
             dom = $(this).parent().next().children()
         }
         if(dom){
@@ -200,7 +200,7 @@ $(function () {
             return item!=''
         })
         if(filterArr.length<81){
-            alert('填满才能check哦')
+            alert('please fill all')
             return false;
         }
 
@@ -222,7 +222,7 @@ $(function () {
 		});
             if(score < record){
                 let newRecord = n2time(score);
-                msg+='打破记录啦，最快用时'+newRecord;
+                msg+='NEW RECORD!'+newRecord;
                $('#record').text(newRecord)
            
             }

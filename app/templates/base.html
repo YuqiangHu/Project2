@@ -17,7 +17,6 @@
         Logout <a href="{{ url_for('logout') }}">Logout</a>
         {% endif %}</a>
         </div>
-        <div>Play game! <a href="/game">Play</a></div>
         <div>Play shudu <a href="/shudu">Play</a></div>
         <div>message <a href="/post">message</a></div>
         <div>How to Play <a href="/rule">rules</a></div>
@@ -26,7 +25,7 @@
          {% if current_user.is_anonymous %}
          <h1>please login</h1>
          {% else %}
-         <h1>Hi!{{ current_user.username }}!</h1>
+         <h1><b>welcome!{{ current_user.username }}!</b></h1>
          {% endif %}
         </div>
         

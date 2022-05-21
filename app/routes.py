@@ -17,10 +17,7 @@ def index():
     
     return render_template('index.html', title='Home')
 
-@app.route('/game')
-def game():
-	user = {'username': 'Roger'}
-	return render_template('game.html', title='Play', user=user)
+
 	
 @app.route('/rule')
 def rule():
@@ -81,6 +78,7 @@ def register():
     return render_template('register.html', title='Register', form=form)
 
 @app.route('/shudu', methods=['GET', 'POST'])
+@login_required
 def shudu():
     if request.method == "GET":
     	return render_template('shudu.html', title='shudu')

@@ -1,3 +1,6 @@
+{% extends "base.html" %}
+
+{% block content %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -129,7 +132,18 @@
     
     <script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
     <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+    
+    <div class="intro"  style="background-color:green;">
+
+
+<h1> First please select the game difficulty mode, you can choose Easy mode, Middle mode, and Hard mode. When you choose the mode, the game will automatically generate.
+When you have filled in all the blanks, click the check button, you will know whether you have done the right thing, and we will record your score this time.
+if you exceed your historical record, we will update your score in the database.
+If your score is in the top ten of all our players, we will display your name and score in the ranking on the right</h1>
+    
+    </div>
    
 </body>
 
 </html>
+{% endblock %}
