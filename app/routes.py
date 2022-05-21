@@ -1,5 +1,5 @@
 from app import app
-from flask import render_template, flash, redirect,url_for
+from flask import render_template, flash, request, redirect,url_for
 from app.forms import LoginForm
 from flask_login import current_user, login_user
 from app.models import User
@@ -7,6 +7,7 @@ from flask_login import logout_user
 from flask_login import login_required
 from app import db
 from app.forms import RegistrationForm
+import json
 
 from flask_admin.contrib.sqla import ModelView
 
@@ -79,8 +80,15 @@ def register():
         return redirect(url_for('login'))
     return render_template('register.html', title='Register', form=form)
 
-@app.route('/shudu')
+@app.route('/shudu', methods=['GET', 'POST'])
 def shudu():
-   
-    return render_template('shudu.html', title='shudu')
+    if request.method == "GET":
+    	return render_template('shudu.html', title='shudu')
+    else:	
+    	data = request.get_json()
+    	print(data["best_time"])
+    	# TODO
+    	
+    	return "save successful"
+    
 

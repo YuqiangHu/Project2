@@ -78,7 +78,7 @@ $(function () {
         let chance;
         switch (level) {
             case 'easy':
-                chance = 0.7;
+                chance = 1;
                 break;
             case 'middle':
                 chance = 0.5;
@@ -208,10 +208,23 @@ $(function () {
         if(errorArr.length == 0){
             clearInterval(clockInterval);
             let msg = 'Success!';
+            var send_data = {"best_time": n2time(score)+""}
+        	$.ajax({
+		    url: '/shudu',
+		    type: 'POST',
+		    data: JSON.stringify(send_data),
+		    contentType: 'application/json; charset=utf-8',
+		    dataType: 'json',
+		    async: false,
+		    success: function(msg) {
+			console.log(msg);
+		    }
+		});
             if(score < record){
                 let newRecord = n2time(score);
                 msg+='打破记录啦，最快用时'+newRecord;
                $('#record').text(newRecord)
+           
             }
             localStorage.setItem('record',score);
             alert(msg);
