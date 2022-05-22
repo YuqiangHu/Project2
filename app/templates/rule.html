@@ -1,7 +1,41 @@
 {% extends "base.html" %}
 
 {% block content %}
-   
+
+<div class="container-fluid">
+  <h1>This is rule</h1>
+  <p> On mobile devices, the four columns are stacked up and down when the screen width is less than 576px.</p>
+  <div class="row">
+    <div class="col-sm-3" style="background-color:lavender;">
+  <p>First please select the game difficulty mode, you can choose Easy mode, Middle mode, and Hard mode. When you choose the mode, the game will automatically generate.</p>
+	   <img class="featurette-image img-responsive center-block" 
+		src="{{url_for('static',filename = 'image/start.PNG')}}" 
+		height="250px" width="250px" alt="Generic placeholder image" align = "center">
+    </div>
+    <div class="col-sm-3" style="background-color:lavenderblush;">
+    <p>Notice that there is only one blank cell in the 3x3 cell in the upper right, and only 2 is missing in this 3x3 cell, so it must be 2 here.</p>
+	   <img class="featurette-image img-responsive center-block" 
+		src="{{url_for('static',filename = 'image/grid.PNG')}}" 
+		height="250px" width="250px" alt="Generic placeholder image" align = "center">
+    </div>
+    
+    <div class="col-sm-3" style="background-color:lavender;">
+    <p>Note that only 2 is missing in the rightmost column, so that blank box must be filled with 2</p>
+	   <img class="featurette-image img-responsive center-block" 
+		src="{{url_for('static',filename = 'image/grid.PNG')}}" 
+		height="250px" width="250px" alt="Generic placeholder image" align = "center">
+    </div>
+    <div class="col-sm-3" style="background-color:lavenderblush;">
+    <p>When you have filled all the blank boxes, you can click the check button to check if your answer is correct. When your answer is correct, you earn your time/marks</p>
+	   <img class="featurette-image img-responsive center-block" 
+		src="{{url_for('static',filename = 'image/win.PNG')}}" 
+		height="250px" width="250px" alt="Generic placeholder image" align = "center">   
+     </div>
+  </div>
+</div>
+
+
+
     <h1>this is rules!</h1>
     <div>Give it a try!
 

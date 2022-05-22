@@ -5,16 +5,26 @@
     <!--<button onClick="loadXMLDoc()">Click Show Time</button>-->
     <!--<script src="{{ url_for('static', filename='js/time.js') }}"></script> -->
   </div>
-    <h1><b>USER:{{ current_user.username }}!</b></h1>
-     <p>my bestgrade:{{time}} seconds</p>
-    <hr>
-    {% for post in posts %}
-    <p>
-    {{ post.author.username }} says: <b>{{ post.body }}</b>
-    </p>
   
-    
-    
+  <div class="container">
+   <div class="row" >
+      <div class="col-xs-2 col-sm-12" 
+         style="background-color: white;
+         box-shadow: inset 1px -1px 1px #500, inset -1px 1px 1px #1000;">
+         <h1 class="display-3">USER(╬ Ò ‸ Ó){{ current_user.username }}( ͒˃⌂˂ ͒)</h1>
+         <h1 class="display-2">Bestgrade:{{time}} seconds~~~(//●⁰౪⁰●)//</h1>
+      </div>
+  
+ 
+ 
+<div class="container-fluid">
+  <h1>Good Job</h1>
+ 
+  <div class="row">
+     {% for post in posts %}
+    <div class="col" style="background-color:lavender;">{{ post.author.username }} says: <b>{{ post.body }}</b></div>
     {% endfor %} 
+  </div>
+</div> 
     
 {% endblock %}

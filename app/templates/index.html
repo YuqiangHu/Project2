@@ -1,12 +1,57 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>CITS5505</h1>
+   <div class="container">
+    <h1 class="display-1">CITS5505</h1>
     <h1>Yuqiang Hu 23081533</h1>
     <h1>Zhuang Huang 22642989</h1>
     <h2>project introduction</h2>
-    <p class="intro">
-       This assignment was completed by Yuqiang Hu and Zhuang Huang together. Since Huang Zhuang's computer broke down, all the codes were uploaded to GitHub by Hu Yuqiang. We worked together happily. This project is to do a small sudoku game, we made a 9x9 grid sudoku game mainly use front-end JavaScript to make this shudu game. And then use Ajax in index.js to transfer user records to the back end, and stored in the database. Then we implemented a ranking feature where we pulled out the records the user had stored in the database. We also rank users according to how much time they spend, so as to motivate them to play our games more and compete for the TOP1. In order to make the game more interesting and difficult at the same time, we set up three kinds of difficulty (easy, middle, hard), new users can choose the Easy mode to experience our game faster, old users can select the mode of more difficult to increase the challenge the difficulty, continue to attract more users to play our game. We do this by setting math.random () > chance in the index.js file; Chance adjusts the difficulty of the game by setting different thresholds to show different numbers of squares, changing the number of squares the game needs to fill. And to keep this game always new for our users, our Sudoku games are randomly generated every time, and every time is different.
-            </p>
-    <h1><b>TRY TO LEAVE YOUR NAME ON OUR RANK!</b></h1>
+   </div>
+
+<html>
+
+<div class="container">
+   <div class="row" >
+      <div class="col-xs-6 col-sm-3" 
+         style="background-color: #b38676;
+         box-shadow: inset 1px -1px 1Spx #444, inset -1px 1px 1px #444;">
+         <p>This assignment was completed by Yuqiang Hu and Zhuang Huang together. Since Huang Zhuang's computer broke down, all the codes were uploaded to GitHub by Hu Yuqiang. We worked together happily. This project is to do a small sudoku game, we made a 9x9 grid sudoku game mainly use front-end JavaScript to make this shudu game. And then use Ajax in index.js to transfer user records to the back end, and stored in the database. Then we implemented a ranking feature where we pulled out the records the user had stored in the database.</p>
+      </div>
+      
+      <div class="col-xs-6 col-sm-3" 
+         style="background-color: #adad78;box-shadow: 
+         inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+         <p>We also rank users according to how much time they spend, so as to motivate them to play our games more and compete for the TOP1. In order to make the game more interesting and difficult at the same time, we set up three kinds of difficulty (easy, middle, hard), new users can choose the Easy mode to experience our game faster, old users can select the mode of more difficult to increase the challenge the difficulty, continue to attract more users to play our game. 
+         </p>
+      </div>
+
+      <div class="clearfix visible-xs"></div>
+
+      <div class="col-xs-6 col-sm-3" 
+         style="background-color: #debdb1;
+         box-shadow:inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+         <p>We do this by setting math.random () > chance in the index.js file; Chance adjusts the difficulty of the game by setting different thresholds to show different numbers of squares, changing the number of squares the game needs to fill. And to keep this game always new for our users, our Sudoku games are randomly generated every time, and every time is different. 
+         </p>
+      </div>
+      <div class="col-xs-6 col-sm-3" 
+         style="background-color: #afdebc;box-shadow: 
+         inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+         <p>
+		The project consists of the following main modules.
+		base.html (main)
+		Login.html
+		Register.html
+		Admin.html
+		shudu.html
+		Rele.html
+		Rank.html (Ranking of all users)
+		User.html(personal display)
+		and back-end database data storage
+         </p>
+      </div>
+   </div>
+</div>
+
+</body>
+</html>
 {% endblock %}

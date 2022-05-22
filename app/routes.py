@@ -111,6 +111,7 @@ def rank():
 
 
 @app.route('/admin1', methods=['GET', 'POST'])
+@login_required
 def admin1():
     result = []
     rank =User.query.order_by("id").all()
@@ -122,11 +123,12 @@ def admin1():
         temp_dict["besttime"] = one_gamer.besttime
        
         result.append(temp_dict)
+             
     if current_user.access == 0:
     		return render_template('admin1.html', title='manage page', rank_list=result)
     else:
     		return render_template('index.html', title='Home')
-    		
+		
 
  
 

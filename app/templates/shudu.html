@@ -133,14 +133,38 @@
     <script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
     <script src="{{ url_for('static', filename='js/index.js') }}"></script>
     
-    <div class="intro"  style="background-color:green;">
+   
+   
+    <div class="container">
+   <div class="row" >
+      <div class="col-xs-6 col-sm-3" 
+         style="background-color: #dedef8;
+         box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+         <p><b>First please select the game difficulty mode, you can choose Easy mode, Middle mode, and Hard mode.</b></p>
+      </div>
+      
+      <div class="col-xs-6 col-sm-3" 
+         style="background-color: #97e6d6;
+         box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+         <p>When you choose the mode, the game will automatically generate. When you have filled in all the blanks, please click the check button</p>
+      </div>
+      
+      <div class="col-xs-6 col-sm-3" 
+         style="background-color: #adad78;
+         box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+         <p>And then the browser will pop up a popup and tell you if you're right.</p>
+      </div>
+      
+      <div class="col-xs-6 col-sm-3" 
+         style="background-color: #d4a9eb;box-shadow: 
+         inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+         <p>if you exceed your historical record, it will update your score in the database.and show in the Rank 
+         </p>
+      </div>
 
 
-<h1> First please select the game difficulty mode, you can choose Easy mode, Middle mode, and Hard mode. When you choose the mode, the game will automatically generate.
-When you have filled in all the blanks, click the check button, you will know whether you have done the right thing, and we will record your score this time.
-if you exceed your historical record, we will update your score in the database.
-If your score is in the top ten of all our players, we will display your name and score in the ranking on the right</h1>
-    
+
+    </div>
     </div>
    
 </body>

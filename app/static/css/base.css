@@ -3,22 +3,24 @@ ul {
     margin: 0;
     padding: 0;
     width: 200px;
-    background-color: white;
+    background-color: green;
 }
  
 li a {
     display: block;
-    color: #000;
+    color: black;
     padding: 8px 16px;
     text-decoration: none;
 }
  
 /* Move the mouse over the options to modify the background color */
 li a:hover {
-    background-color: #555;
-    color: white;
+    background-color: white;
+    color: red;
 }
 
-.bg {
- background-color: white
+
+
+.yuqiang {
+       background:url('../image/cong.jpg');
 }

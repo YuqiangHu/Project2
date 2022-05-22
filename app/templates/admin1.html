@@ -1,13 +1,42 @@
 {% extends "base.html" %}
 
+
+
 {% block content %}
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12 col-md-12 bg-success">
+        
+       <table class="table table-hover">
+	  <caption>User information</caption>
+	  <thead>
+	    <tr>
+	      <th>User ID</th>
+	      <th>Name</th>
+	      <th>Email</th>
+	      <th>Record</th>
+	    </tr>
+	  </thead>
+	  
+	  <tbody>
+	  {% for oneline in rank_list %}
+	    <tr>
+	      <td>{{ oneline.id }}</td>
+	      <td>{{ oneline.username }}</td>
+	      <td>{{ oneline.email }}</td>
+	      <td>{{ oneline.username }}</td>
+	    </tr>
+	 {% endfor %}
+	  </tbody>
+	</table> 
+        
+      </div>
+   </div>
+  </div>
+  
+  
+  
    
-    {% for oneline in rank_list %}
-    <div>
-        {{ oneline.id }}
-        {{ oneline.username }}
-        {{ oneline.email }}
-        {{ oneline.besttime }}
-    </div>
-    {% endfor %}
 {% endblock %}
+
