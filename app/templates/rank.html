@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+   
+    {% for oneline in rank_list %}
+    <div>
+       
+        {{ oneline.username }}
+        {{ oneline.besttime }}
+    </div>
+    {% endfor %}
+{% endblock %}

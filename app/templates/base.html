@@ -2,43 +2,44 @@
 <html>
     <head>
       {% if title %}
-      <title>{{ title }} - Roger</title>
+      <title>{{ title }} - cits5505</title>
       {% else %}
-      <title>Welcome to rogerpage</title>
+      <title>Welcome to puzzle</title>
       {% endif %}
+      
+      <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+      <link href="{{ url_for('static', filename='css/base.css') }}" rel="stylesheet">
     </head>
     <body>
-    navigation bar:
-        <div>Homepage: <a href="{{url_for('index')}}">Home</a></div>
-        <div> 
-        {% if current_user.is_anonymous %}
-        Login: <a href="{{ url_for('login') }}">Login</a>
+    <div class="bg">
+   <ul>     
+
+  <li><a href="/index">Homepage</a></li>  {% if current_user.is_anonymous %}
+  <li><a href="{{ url_for('login') }}">Login</a></li>
         {% else %}
-        Logout <a href="{{ url_for('logout') }}">Logout</a>
+  <li><a href="{{ url_for('logout') }}">Logout</a><li>
         {% endif %}</a>
-        </div>
-        <div>Play shudu <a href="/shudu">Play</a></div>
-        <div>message <a href="/post">message</a></div>
-        <div>How to Play <a href="/rule">rules</a></div>
+  <li><a href="/post">Message</a></li>
+  <li> <a href="/shudu">Play Game</a></li>
+  <li> <a href="rule">Rules</a></li>
+    </ul>
+        
+        
+        
+        
         
         <div>
          {% if current_user.is_anonymous %}
-         <h1>please login</h1>
+         <h1>Please Login</h1>
          {% else %}
-         <h1><b>welcome!{{ current_user.username }}!</b></h1>
+         <h1><b>Welcome!{{ current_user.username }}!</b></h1>
          {% endif %}
         </div>
         
         <hr>
-        {% with messages = get_flashed_messages() %}
-        {% if messages %}
-        <ul>
-            {% for message in messages %}
-            <li>{{ message }}</li>
-            {% endfor %}
-        </ul>
-        {% endif %}
-        {% endwith %}
+        
         {% block content %}{% endblock %}
+        
+      </div>
     </body>
 </html>

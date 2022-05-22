@@ -78,7 +78,7 @@ $(function () {
         let chance;
         switch (level) {
             case 'easy':
-                chance = 0.7;
+                chance = 1;
                 break;
             case 'middle':
                 chance = 0.5;
@@ -146,7 +146,7 @@ $(function () {
         }else{
             res = '00:'+seconds
         }
-        return res;
+        return n;
     }
     $(':input').on('input',function(){
         let v = $(this).val()

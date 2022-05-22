@@ -85,8 +85,20 @@ def shudu():
     else:	
     	data = request.get_json()
     	print(data["best_time"])
-    	# TODO
+    	current_user.besttime = int(data["best_time"])
     	
     	return "save successful"
+    	
+@app.route('/rank', methods=['GET', 'POST'])
+def rank():
+    result = []
+    rank =User.query.all()
+    for one_gamer in rank:
+        temp_dict = dict()
+        
+        temp_dict["username"] = one_gamer.username
+        temp_dict["besttime"] = one_gamer.besttime
+        result.append(temp_dict)
+    return render_template('rank.html', title='rank', rank_list=result)
     
 
