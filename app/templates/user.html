@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}  
+  <div> 
+    <!--<button onClick="loadXMLDoc()">Click Show Time</button>-->
+    <!--<script src="{{ url_for('static', filename='js/time.js') }}"></script> -->
+  </div>
+    <h1><b>USER:{{ current_user.username }}!</b></h1>
+     <p>my bestgrade:{{time}} seconds</p>
+    <hr>
+    {% for post in posts %}
+    <p>
+    {{ post.author.username }} says: <b>{{ post.body }}</b>
+    </p>
+  
+    
+    
+    {% endfor %} 
+    
+{% endblock %}

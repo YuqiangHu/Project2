@@ -7,6 +7,7 @@
       <title>Welcome to puzzle</title>
       {% endif %}
       
+      <div>
       <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
       <link href="{{ url_for('static', filename='css/base.css') }}" rel="stylesheet">
     </head>
@@ -19,14 +20,16 @@
         {% else %}
   <li><a href="{{ url_for('logout') }}">Logout</a><li>
         {% endif %}</a>
-  <li><a href="/post">Message</a></li>
+  <li><a href="/mypage">Mypage</a></li>
   <li> <a href="/shudu">Play Game</a></li>
   <li> <a href="rule">Rules</a></li>
+  <li> <a href="rank">Rank</a></li>
+  <li> <a href="admin1">administrator</a></li>
     </ul>
+       
+    
         
-        
-        
-        
+        </div>
         
         <div>
          {% if current_user.is_anonymous %}

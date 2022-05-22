@@ -7,9 +7,10 @@ from flask_login import logout_user
 from flask_login import login_required
 from app import db
 from app.forms import RegistrationForm
+from datetime import datetime
 import json
 
-from flask_admin.contrib.sqla import ModelView
+
 
 @app.route('/')
 @app.route('/index')
@@ -85,14 +86,21 @@ def shudu():
     else:	
     	data = request.get_json()
     	print(data["best_time"])
+    	
     	current_user.besttime = int(data["best_time"])
     	
+    	#p = User(besttime="current_user.besttime")
+    	#db.session.add(p)
+    	db.session.commit()
+
+    	
+    	print (current_user.besttime)
     	return "save successful"
     	
 @app.route('/rank', methods=['GET', 'POST'])
 def rank():
     result = []
-    rank =User.query.all()
+    rank =User.query.order_by("besttime").all()
     for one_gamer in rank:
         temp_dict = dict()
         
@@ -100,5 +108,47 @@ def rank():
         temp_dict["besttime"] = one_gamer.besttime
         result.append(temp_dict)
     return render_template('rank.html', title='rank', rank_list=result)
+
+
+@app.route('/admin1', methods=['GET', 'POST'])
+def admin1():
+    result = []
+    rank =User.query.order_by("id").all()
+    for one_gamer in rank:
+        temp_dict = dict()
+        temp_dict["id"] = one_gamer.id
+        temp_dict["username"] = one_gamer.username
+        temp_dict["email"] = one_gamer.email
+        temp_dict["besttime"] = one_gamer.besttime
+       
+        result.append(temp_dict)
+    if current_user.access == 0:
+    		return render_template('admin1.html', title='manage page', rank_list=result)
+    else:
+    		return render_template('index.html', title='Home')
+    		
+
+ 
+
+@app.route('/mypage')
+@login_required
+def mypage():
+    user = {'username': 'Roger'}
+    posts = [
+        {
+            'author': {'username': 'John'},
+            'body': 'Congradulations!!'
+        },
+        {
+            'author': {'username': 'Susan'},
+            'body': 'Good Job!'
+        },
+        {
+		'author': {'username': 'rogerson'},
+		'body' : 'Could You Follow Me and Play With Me'
+        }
+    ]
+    time =current_user.besttime
+    return render_template('user.html', title='Message', user=user, posts=posts,time=time)
     
 
